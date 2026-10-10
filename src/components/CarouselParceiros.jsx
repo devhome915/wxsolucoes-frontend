@@ -39,7 +39,7 @@ export function CarouselParceiros() {
           ))}
         </div>
 
-        {/* A cópia permite repetir o movimento sem salto */}
+       
         <div className="parceiros-grupo" aria-hidden="true">
           {imagens.map((imagem) => (
             <div className="parceiros-item" key={imagem.url}>
