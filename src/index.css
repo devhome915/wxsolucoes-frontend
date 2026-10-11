@@ -1,12 +1,20 @@
 @import url("./assets/css/color.css");
 @import url("./assets/font/font.css");
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
 :root {
   --spacing-1: 1px;
   --spacing-5: 5px;
   --spacing-10: 10px;
   --spacing-20: 20px;
   --spacing-30: 30px;
+
 }
 
 body {
@@ -21,7 +29,7 @@ header {
 .navbar {
   border-top: var(--spacing-5) solid var(--bg-yellow);
   border-bottom: var(--spacing-1) solid var(--border-silver);
-  background-color: var(--bg-white);
+  background-color: var(var(--bg-white));
 }
 
 .menu-idiomas button {
@@ -78,7 +86,7 @@ section h4 {
   height: 100%;
   padding: var(--spacing-20);
   border-radius: 12px;
-  background-color: #fff;
+  background-color: var(--bg-white);
   text-align: center;
   transition: transform 0.3s ease-in-out,
               box-shadow 0.3s ease-in-out;
@@ -129,7 +137,8 @@ section h4 {
   width: 100%;
   overflow: hidden;
   padding: 24px 0;
-  background-color: #fff;
+  background-color: var(--bg-white);
+  margin-bottom: var(--spacing-30);
 }
 
 .parceiros-faixa {
@@ -159,7 +168,7 @@ section h4 {
 
 .parceiros-item img {
   display: block;
-  width: 150px;
+  width: 170px;
   height: auto;
   object-fit: contain;
 }
@@ -180,7 +189,7 @@ section h4 {
   left: 0;
   background: linear-gradient(
     to right,
-    #fff,
+    var(--bg-white),
     rgb(255 255 255 / 0%)
   );
 }
@@ -189,7 +198,7 @@ section h4 {
   right: 0;
   background: linear-gradient(
     to left,
-    #fff,
+    var(--bg-white),
     rgb(255 255 255 / 0%)
   );
 }
@@ -199,6 +208,13 @@ section h4 {
   animation-play-state: paused;
 }
 
+.app-cross-plataform {
+  width: 100% !important;
+  overflow: hidden;
+  padding: 24px 0;
+  color: var(var(--bg-white));
+  background-color: #039ece;
+}
 @keyframes mover-parceiros {
   from {
     transform: translateX(0);

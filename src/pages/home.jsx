@@ -3,6 +3,10 @@ import crossPlataformas from "../assets/imagens/cross-plateformes.png";
 import { Carousel } from "../components/carousel";
 import { Wdev } from "../components/wdev";
 import { CarouselParceiros } from "../components/CarouselParceiros";
+import { Noticias } from "../components/Noticias";
+import { AppCrossPlataform } from "../components/AppCrossPlataform";
+
+
 
 export function Home() {
   return (
@@ -19,12 +23,11 @@ export function Home() {
           className="img-fluid"
         />
       </Link>
-      
       <Carousel/>
-
       <Wdev/>
-
-      <CarouselParceiros />
+      <CarouselParceiros /> 
+      <Noticias/>
+      <AppCrossPlataform/>
     </section>
   );
 }
