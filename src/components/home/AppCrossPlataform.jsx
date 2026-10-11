@@ -2,7 +2,7 @@ import { Link } from "react-router"
 
 export function AppCrossPlataform(){
     return(
-        <div className="app-cross-plataform d-flex">
+        <div className="app-cross-plataform d-flex w-100">
             <div className="container">
                 <h3 className="display">Seus aplicativos Cross-plataform (nativo)</h3>
                 <h4 className="text-light">Um código, mesma interface, mesmos relatórios ... para todas as plataformas de destino.</h4>

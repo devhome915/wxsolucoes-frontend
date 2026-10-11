@@ -1,3 +1,4 @@
+import "../components/home/homeCss/homeMainCss.css"
 import { Link } from "react-router";
 import crossPlataformas from "../assets/imagens/cross-plateformes.png";
 import { Carousel } from "../components/carousel";

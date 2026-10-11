@@ -1,0 +1,15 @@
+header {
+  margin-bottom: var(--spacing-10);
+}
+
+/* Menu */
+.navbar {
+  border-top: var(--spacing-5) solid var(--bg-yellow);
+  border-bottom: var(--spacing-1) solid var(--bg-silver-light);
+  background-color: var(var(--bg-white));
+}
+
+.menu-idiomas button {
+  border: none;
+  background: transparent;
+}

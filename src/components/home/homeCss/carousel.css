@@ -1,0 +1,14 @@
+/* Carrossel de banners */
+.carousel {
+  margin-top: var(--spacing-20);
+  margin-bottom: var(--spacing-30);
+  box-shadow: 0 0 10px #a3a3a3;
+}
+
+.carousel-inner .carousel-item img {
+  display: block;
+  width: 100%;
+  height: clamp(220px, 65vh, 650px);
+  object-fit: contain;
+  object-position: center;
+}
