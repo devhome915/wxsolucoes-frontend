@@ -1,17 +1,22 @@
+
 import { Outlet } from "react-router";
-import { Header } from "./mainHeader/header/header";
-import { Footer } from "./mainFooter/footer/footer";
+
+// Ajuste os imports conforme os nomes reais
+import { Nav } from "./mainHeader/Nav";
+import { Footer } from "./mainFooter/Footer";
 
 export function MainLayout() {
   return (
     <>
-      <Header />
+      <header>
+        <Nav />
+      </header>
 
-      <main className="container-fluid">
+      <main>
         <Outlet />
       </main>
 
-      <Footer/>
+      <Footer />
     </>
   );
 }
