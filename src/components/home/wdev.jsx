@@ -1,11 +1,11 @@
-import logoWindev from "../assets/imagens/img/logo-windev.png";
-import pacoteWindev from "../assets/imagens/img/package-windev-26.png";
+import logoWindev from "../../assets/imagens/img/logo-windev.png";
+import pacoteWindev from "../../assets/imagens/img/package-windev-26.png";
 
-import logoWebdev from "../assets/imagens/img/logo-webdev.png";
-import pacoteWebdev from "../assets/imagens/img/package-webdev-26.png";
+import logoWebdev from "../../assets/imagens/img/logo-webdev.png";
+import pacoteWebdev from "../../assets/imagens/img/package-webdev-26.png";
 
-import logoMobile from "../assets/imagens/img/logo-windev-mobile.png";
-import pacoteMobile from "../assets/imagens/img/package-windev-mobile-26.png";
+import logoMobile from "../../assets/imagens/img/logo-windev-mobile.png";
+import pacoteMobile from "../../assets/imagens/img/package-windev-mobile-26.png";
 
 const produtos = [
   {

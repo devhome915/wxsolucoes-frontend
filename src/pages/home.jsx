@@ -1,11 +1,11 @@
 import "../components/home/homeCss/homeMainCss.css"
 import { Link } from "react-router";
 import crossPlataformas from "../assets/imagens/cross-plateformes.png";
-import { Carousel } from "../components/carousel";
-import { Wdev } from "../components/wdev";
-import { CarouselParceiros } from "../components/CarouselParceiros";
-import { Noticias } from "../components/Noticias";
-import { AppCrossPlataform } from "../components/AppCrossPlataform";
+import { Carousel } from "../components/home/carousel";
+import { Wdev } from "../components/home/wdev";
+import { CarouselParceiros } from "../components/home/CarouselParceiros";
+import { Noticias } from "../components/home/Noticias";
+import { AppCrossPlataform } from "../components/home/AppCrossPlataform";
 
 
 

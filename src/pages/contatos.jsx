@@ -1,4 +1,9 @@
+import { ContatoForm } from "../components/contatos/contatosmain";
+
+
 export function Contatos() {
-  return <h1>Entre em contato</h1>;
+  return(
+    <ContatoForm/>
+  )
 }
 

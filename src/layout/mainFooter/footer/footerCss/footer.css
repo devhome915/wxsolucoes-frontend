@@ -1,3 +1,178 @@
-.footer{
-    padding:20px;
+
+/* FOOTER PRINCIPAL */
+.footer {
+  width: 100%;
+  margin: 0;
+  margin-top: 20px;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* ÁREA DE CONTATO */
+.footer-contact {
+  width: 100%;
+  background-color: #ededed;
+  padding: 45px 0 20px;
+  color: #000;
+}
+
+.footer-contact h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+.footer-contact p {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.footer-contact a {
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.footer-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ÁREA DE NAVEGAÇÃO */
+.footer-links {
+  width: 100%;
+  background-color: #333333;
+  color: #fff;
+  padding: 28px 0 25px;
+}
+
+.footer-menu-group {
+  margin-bottom: 18px;
+}
+
+.footer-menu-group h5 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+.footer-menu-group ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footer-menu-group li {
+  margin-bottom: 5px;
+  line-height: 1.3;
+}
+
+.footer-menu-group a {
+  font-size: 14px;
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-menu-group a:hover {
+  color: #ffc107;
+}
+
+/* LINKS SOCIAIS */
+.footer-social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.footer-social a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+/* COPYRIGHT */
+.footer-bottom {
+  position: relative;
+  width: 100%;
+  background-color: #202020;
+  color: #fff;
+  padding: 18px 65px;
+  min-height: 55px;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* BOTÃO VOLTAR AO TOPO */
+.footer-top {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 50px;
+  height: 46px;
+
+  background-color: #fff;
+  color: #002c55;
+  border: none;
+
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.footer-top:hover {
+  background-color: #e5e5e5;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 767px) {
+  .footer-contact {
+    padding: 35px 15px;
+  }
+
+  .footer-contact h2 {
+    font-size: 24px;
+  }
+
+  .footer-contact p {
+    font-size: 14px;
+  }
+
+  .footer-call {
+    margin-top: 20px;
+  }
+
+  .footer-links {
+    padding: 30px 15px;
+  }
+
+  .footer-social {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    padding: 20px 60px 20px 15px;
+  }
+
+  .footer-bottom p {
+    font-size: 12px;
+  }
+
+  .footer-top {
+    width: 40px;
+    height: 40px;
+  }
 }
