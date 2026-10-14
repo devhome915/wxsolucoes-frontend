@@ -178,7 +178,7 @@ section h4 {
   width: 100% !important;
   overflow: hidden;
   padding: 24px 0;
-  color: var(var(--bg-white));
+  color: var(--bg-white);
   background-color: #039ece;
 }
 @keyframes mover-parceiros {
