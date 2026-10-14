@@ -1,15 +1,26 @@
 
 name: React CI - WX Solucoes
 
+# Eventos que iniciam o workflow
 on:
   push:
     branches: [main]
+
   pull_request:
     branches: [main]
+
   workflow_dispatch:
 
+# Permissao de leitura do repositorio
+permissions:
+  contents: read
+
+# Trabalhos automatizados
 jobs:
-  build:
+
+  # JOB 1 - Qualidade do codigo
+  lint:
+    name: Oxlint
     runs-on: ubuntu-latest
 
     steps:
@@ -21,17 +32,40 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
-          
+
       - name: Mostrar versoes do ambiente
         run: |
           node --version
           npm --version
-    
+
       - name: Instalar dependencias
         run: npm ci
 
       - name: Verificar qualidade com Oxlint
         run: npm run lint
-        
-      - name: Verificar build
+
+  # JOB 2 - Compilacao do React
+  build:
+    name: Build React
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Mostrar versoes do ambiente
+        run: |
+          node --version
+          npm --version
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Compilar projeto React
         run: npm run build
