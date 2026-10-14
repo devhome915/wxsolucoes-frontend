@@ -30,5 +30,8 @@ jobs:
       - name: Instalar dependencias
         run: npm ci
 
+      - name: Verificar qualidade com Oxlint
+        run: npm run lint
+        
       - name: Verificar build
         run: npm run build
