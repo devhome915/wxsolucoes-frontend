@@ -2,9 +2,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import { BrowserRouter } from "react-router";
-import { GoogleOAuthProvider } from "@react-oauth/google";
 import { HashRouter } from "react-router";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+
 import App from "./App.jsx";
 
 // Bootstrap

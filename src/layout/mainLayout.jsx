@@ -1,22 +1,19 @@
-
 import { Outlet } from "react-router";
 
-// Ajuste os imports conforme os nomes reais
-import { Nav } from "./mainHeader/Nav";
-import { Footer } from "./mainFooter/Footer";
+// Ajuste os caminhos conforme seus arquivos
+import { Header} from "../layout/mainHeader/header/header";
+import { Footer } from "../layout/mainFooter/footer/footer";
 
 export function MainLayout() {
   return (
-    <>
-      <header>
-        <Nav />
-      </header>
+    <div className="app-layout">
+      <Header/>
 
-      <main>
+      <main className="app-content">
         <Outlet />
       </main>
 
       <Footer />
-    </>
+    </div>
   );
 }

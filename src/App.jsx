@@ -1,14 +1,26 @@
 
 import { Routes, Route } from "react-router";
 
-import { Login } from "./pages/login";
+import { MainLayout } from "./layout/mainLayout";
 import { Contatos } from "./pages/contatos";
+import { Login } from "./pages/login";
+import { Home } from "./pages/home";
 
 export default function App() {
   return (
     <Routes>
-      <Route path="login" element={<Login />} />
-      <Route path="contatos" element={<Contatos />} />
+      <Route element={<MainLayout />}>
+
+        <Route
+          index
+          element={<Home/>}
+        />
+
+        <Route path="contatos" element={<Contatos />} />
+
+        <Route path="login" element={<Login />} />
+
+      </Route>
     </Routes>
   );
 }
