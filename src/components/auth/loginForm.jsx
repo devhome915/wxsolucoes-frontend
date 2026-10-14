@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { GoogleLogin } from "@react-oauth/google";
 import { authService } from "../../services/authService";
-import "./Login.css";
+import "./login.css";
 
 export function LoginForm() {
   const navigate = useNavigate();
