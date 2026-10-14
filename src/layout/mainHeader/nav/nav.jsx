@@ -1,5 +1,7 @@
 
+import { useState } from "react";
 import { Link } from "react-router";
+
 import logo from "../../../assets/imagens/bandeiras/logo/logo-wx-pcsoft.png";
 import brasil from "../../../assets/imagens/bandeiras/drapeau-br.gif";
 import espanha from "../../../assets/imagens/bandeiras/drapeau-esp.gif";
@@ -10,29 +12,88 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 export function Nav() {
 
+  const [menuAberto, setMenuAberto] = useState(null);
+
   const menuLabel = [
-    { nome: "Programas", link: "/Programas", dropdown: true },
-    { nome: "Help", link: "/help", dropdown: false },
-    { nome: "Baixar", link: "/baixar", dropdown: true },
-    { nome: "Suporte técnico", link: "/suporte", dropdown: true },
-    { nome: "Treinamento", link: "/treinamento", dropdown: true },
-    { nome: "Informações", link: "/info", dropdown: true },
-    { nome: "Contatos", link: "/contatos", dropdown: false },
+    {
+      nome: "Programas",
+      link: "/Programas",
+      dropdown: true,
+      submenu: [
+        { nome: "Todos os programas", link: "/Programas" }
+      ]
+    },
+    {
+      nome: "Help",
+      link: "/help",
+      dropdown: false
+    },
+    {
+      nome: "Baixar",
+      link: "/baixar",
+      dropdown: true,
+      submenu: [
+        { nome: "Downloads", link: "/baixar" }
+      ]
+    },
+    {
+      nome: "Suporte técnico",
+      link: "/suporte",
+      dropdown: true,
+      submenu: [
+        { nome: "Central de suporte", link: "/suporte" }
+      ]
+    },
+    {
+      nome: "Treinamento",
+      link: "/treinamento",
+      dropdown: true,
+      submenu: [
+        { nome: "Treinamentos", link: "/treinamento" }
+      ]
+    },
+    {
+      nome: "Informações",
+      link: "/info",
+      dropdown: true,
+      submenu: [
+        { nome: "Informações gerais", link: "/info" }
+      ]
+    },
+    {
+      nome: "Contatos",
+      link: "/contatos",
+      dropdown: false
+    }
   ];
 
   const imgPais = [
     { nome: "Brasil", img: brasil, idioma: "Português" },
     { nome: "Espanha", img: espanha, idioma: "Espanhol" },
     { nome: "França", img: franca, idioma: "Francês" },
-    { nome: "USA", img: usa, idioma: "Inglês" },
+    { nome: "USA", img: usa, idioma: "Inglês" }
   ];
+
+  const alternarMenu = (nome) => {
+    setMenuAberto((atual) =>
+      atual === nome ? null : nome
+    );
+  };
+
+  const fecharMenu = () => {
+    setMenuAberto(null);
+  };
 
   return (
     <nav className="navbar navbar-expand-xl menu-principal">
       <div className="container-fluid">
 
         {/* LOGO */}
-        <Link className="navbar-brand" to="/">
+        <Link
+          className="navbar-brand"
+          to="/"
+          onClick={fecharMenu}
+        >
           <img src={logo} alt="Logo da empresa" />
         </Link>
 
@@ -56,46 +117,66 @@ export function Nav() {
 
           {/* MENU PRINCIPAL */}
           <ul className="navbar-nav mx-auto">
+
             {menuLabel.map((menu) => (
+
               <li
-                className={`nav-item ${menu.dropdown ? "dropdown" : ""}`}
                 key={menu.nome}
+                className={`nav-item ${
+                  menu.dropdown ? "dropdown" : ""
+                }`}
               >
+
                 {menu.dropdown ? (
                   <>
                     <button
-                      className="nav-link dropdown-toggle"
+                      className={`nav-link dropdown-toggle ${
+                        menuAberto === menu.nome ? "show" : ""
+                      }`}
                       type="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
+                      aria-expanded={menuAberto === menu.nome}
+                      aria-haspopup="true"
+                      onClick={() => alternarMenu(menu.nome)}
                     >
                       {menu.nome}
                     </button>
 
-                    <ul className="dropdown-menu">
-                      <li>
-                        <Link
-                          className="dropdown-item"
-                          to={menu.link}
-                        >
-                          {menu.nome}
-                        </Link>
-                      </li>
+                    <ul
+                      className={`dropdown-menu ${
+                        menuAberto === menu.nome ? "show" : ""
+                      }`}
+                    >
+                      {menu.submenu.map((sub) => (
+                        <li key={sub.nome}>
+                          <Link
+                            className="dropdown-item"
+                            to={sub.link}
+                            onClick={fecharMenu}
+                          >
+                            {sub.nome}
+                          </Link>
+                        </li>
+                      ))}
                     </ul>
                   </>
                 ) : (
-                  <Link className="nav-link" to={menu.link}>
+                  <Link
+                    className="nav-link"
+                    to={menu.link}
+                    onClick={fecharMenu}
+                  >
                     {menu.nome}
                   </Link>
                 )}
+
               </li>
             ))}
+
           </ul>
 
-          {/* IDIOMAS E ACESSO DO USUÁRIO */}
+          {/* IDIOMAS E LOGIN */}
           <div className="menu-acoes d-flex align-items-center">
 
-            {/* BANDEIRAS */}
             <div className="menu-idiomas d-flex align-items-center">
               {imgPais.map((pais) => (
                 <button
@@ -109,12 +190,12 @@ export function Nav() {
               ))}
             </div>
 
-            {/* ÁREA DE ACESSO DO USUÁRIO */}
             <div className="menu-login">
               <Link
                 to="/login"
                 className="btn-login"
                 title="Acessar minha conta"
+                onClick={fecharMenu}
               >
                 <i
                   className="bi bi-person-circle"
@@ -125,6 +206,7 @@ export function Nav() {
             </div>
 
           </div>
+
         </div>
       </div>
     </nav>
